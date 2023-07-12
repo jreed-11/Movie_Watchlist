@@ -137,3 +137,53 @@ min-height: calc(70vh - 60px)
 
 /* Movie List Styles */
 
+.movie {
+  align-items: flex-start;
+  border-bottom: 1px solid #fff;
+  padding: 2rem 0;
+  gap: 1rem;
+}
+
+.poster {
+  height: 186px;
+  width: 125px;
+}
+
+.info {
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.row {
+  gap: 1rem;
+}
+
+.row:first-of-type {
+  align-items: baseline;
+}
+
+.row * {
+  margin: 0;
+}
+
+.plot {
+  color: #A5A5A5;
+  text-overflow: ellipsis;
+}
+
+.watchlist-action {
+  align-self: center;
+}
+
+.watchlist-btn {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  color: red;
+  font-size: 1.5rem;
+  height: 40px;
+  width: 40px;
+
+}
+

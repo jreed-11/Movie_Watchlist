@@ -54,7 +54,7 @@ document.addEventListener('click', e => {
             myMovies.push(e.target.dataset.add)
         }
     }
-    localStorage,setItem('myMovies', JSON.stringify(myMovies));
+    localStorage.setItem('myMovies', JSON.stringify(myMovies));
 })
 
 // Display movie list for either searchlist or watchlist //
@@ -99,3 +99,4 @@ function renderErrorMessage() {
     `
 }
 
+export { moviesFromLocalStorage, renderMovieList, getMovieDataFromIds };
