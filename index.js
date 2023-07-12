@@ -29,7 +29,17 @@ if(form) {
 
 // returns movie dates from imbd ids //
 
-
+async function getMovieDataFromIds(movieIds) {
+    const idRes = await Promise.all(
+        movieIds.map(id => {
+            return fetch(`http://www.omdbapi.com/?apikey=8fbb0769&=${id}&plot=short`)
+        })
+    )
+    const idResults = await Promise.all(
+        idRes.map(movie => movie.json())
+    )
+    return idResults;
+}
 
 // event listener for add buttons which adds movies to local storage //
 
@@ -47,5 +57,45 @@ document.addEventListener('click', e => {
     localStorage,setItem('myMovies', JSON.stringify(myMovies));
 })
 
+// Display movie list for either searchlist or watchlist //
 
+function renderMovieList(movies, container, dataset, btnText) {
+    container.innerHTML = ''
+    movies.forEach( movie => {
+        container.innerHTML += `
+        <div class="movie flex">
+            <img class="poster" src="${movie.Poster}"/>
+            <div class="info flex">
+                <div class="row flex">
+                    <h3>${movie.Title}</h3>
+                        <p>⭐ ${movie.imbdRating}</p>
+                </div>
+
+                <div class="row flex">
+                    <p>${movie.Runtime}</p>
+                    <p>${movie.Genre}</p>                
+                </div>
+                
+                <div class="row flex">
+                    <p class="plot">${movie.Plot}</p>             
+                </div>
+            </div>
+
+            <div class="watchlist-action">
+                <button data-${dataset}="${movie.imbdID}" class="watchlist-btn">${btnText}</button>            
+            </div>
+        </div>
+        `
+    })
+}
+
+// Display error message if search results return nothing //
+
+function renderErrorMessage() {
+    searchResultEl.innerHTML = `
+        <div class="empty-listmsg flex">
+            <p>Unable to find the movie you are looking for. Please search again.</p>        
+        </div>
+    `
+}
 
