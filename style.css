@@ -34,17 +34,81 @@ header {
   background-image: url(images/movie-bg.png);
   background-size: cover;
   background-position: center;
-  height: 20rem;
+  height: 30rem;
 }
 
 .header-text {
   align-items: baseline;
   color: #fff;
   justify-content: space-between;
-  text-shadow: 0px 0px 1rem #0E0E0E;
+  text-shadow: 0px 0px 3rem grey;
 }
 
 .header-text h1 {
   font-size: 4rem;
+  font-weight: 800;
 }
 
+.header-text a {
+  color: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Search Bar */
+
+.search-bar {
+  border-radius: 8px;
+  background-color: #2E2E2F;
+  margin-top: -25px;
+}
+
+.search-bar * {
+  font-size: 1.5rem;
+  font-family: inherit;
+}
+
+.search-bar img {
+  align-self: center; 
+  height: 25px;
+  margin-left: 2rem;
+  width: 25px;
+}
+
+.search-bar input {
+  background-color: #2E2E2F;
+  border: none;
+  color: #9CA3AF;
+  flex-grow: 2;
+  padding: 1rem;
+  outline: none;
+}
+
+.search-bar button {
+  background-color: #4B4B4B;
+  border: none;
+  color: #fff;
+  flex-grow: 1;
+  border-radius: 0px 8px 8px 0px;
+
+}
+
+/* Movie List */
+
+.empty-list-msg {
+  align-items: center;
+  flex-direction: column;
+  height: calc(70vh - 100px);
+  justify-content: center;
+  margin: auto;
+}
+
+.empty-list-msg p {
+  color: #2E2E2F;
+  font-size: 1.8rem;
+}
+
+.film-icon {
+  width: 50px;
+}
