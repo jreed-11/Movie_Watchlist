@@ -71,7 +71,7 @@ function renderMovieList(movies, container, dataset, btnText) {
             <div class="info flex">
                 <div class="row flex">
                     <h3>${movie.Title}</h3>
-                        <p>⭐ ${movie.imbdRating}</p>
+                        <p>⭐ ${movie.imdbRating}</p>
                 </div>
 
                 <div class="row flex">

@@ -140,8 +140,8 @@ min-height: calc(70vh - 60px)
 .movie {
   align-items: flex-start;
   border-bottom: 1px solid #fff;
+  Gap: 1rem;
   padding: 2rem 0;
-  gap: 1rem;
 }
 
 .poster {
@@ -156,6 +156,8 @@ min-height: calc(70vh - 60px)
 }
 
 .row {
+  color: #fff;
+  font-size: 2rem;
   gap: 1rem;
 }
 
@@ -169,6 +171,7 @@ min-height: calc(70vh - 60px)
 
 .plot {
   color: #A5A5A5;
+  font-size: 1.5rem;
   text-overflow: ellipsis;
 }
 
@@ -180,8 +183,9 @@ min-height: calc(70vh - 60px)
   background-color: #fff;
   border: none;
   border-radius: 50%;
-  color: red;
-  font-size: 1.5rem;
+  color: black;
+  cursor: pointer;
+  font-size: 2.5rem;
   height: 40px;
   width: 40px;
 
