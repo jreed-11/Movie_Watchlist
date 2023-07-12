@@ -15,8 +15,31 @@
   </head>
   <body>
     <header class="flex">
-      <div class="flex content-container header-text"></div>
+      <div class="flex content-container header-text">
+        <h1>Find Your Movie</h1>
+        <a href="myWatchlist.html">My Watchlist</a>
+      </div>
     </header>
+
+    <form class="search-bar content-container flex">
+      <img src="images/search-icon.svg" alt="search-icon" />
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Search for a movie"
+        autocomplete="off"
+        required
+      />
+      <button type="submit" id="search-btn">Search</button>
+    </form>
+
+    <div id="search-results" class="movie-list content-container">
+      <div class="empty-list-msg flex">
+        <img src="images/movie-icon.svg" alt="Film Icon" />
+        <p>start exploring</p>
+      </div>
+    </div>
+
     <script src="index.js" type="module"></script>
   </body>
 </html>
