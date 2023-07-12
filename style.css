@@ -97,6 +97,11 @@ header {
 
 /* Movie List */
 
+.movie-list {
+padding: 2rem 0;
+min-height: calc(70vh - 60px)
+}
+
 .empty-list-msg {
   align-items: center;
   flex-direction: column;
@@ -108,6 +113,22 @@ header {
 .empty-list-msg p {
   color: #2E2E2F;
   font-size: 2.5rem;
+}
+
+.empty-list-msg a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.empty-list-msg span {
+  background-color: #fff;
+  border-radius: 50%;
+  color: red;
+  display: inline-block;
+  font-weight: 700;
+  height: 25px;
+  text-align: center;
+  width: 25px;
 }
 
 .film-icon {
