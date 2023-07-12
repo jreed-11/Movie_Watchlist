@@ -85,7 +85,7 @@ function renderMovieList(movies, container, dataset, btnText) {
             </div>
 
             <div class="watchlist-action">
-                <button data-${dataset}="${movie.imbdID}" class="watchlist-btn">${btnText}</button>            
+                <button data-${dataset}="${movie.imdbID}" class="watchlist-btn">${btnText}</button>            
             </div>
         </div>
         `

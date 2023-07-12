@@ -32,4 +32,4 @@ async function renderWatchList() {
     }
 }
 
-renderWatchList()
+renderWatchList();
