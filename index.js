@@ -1,22 +1,39 @@
-const form = document.getElementById('form');
+const form = document.querySelector('form');
 const searchInput = document.getElementById('search-input');
 const searchResultEl = document.getElementById('search-results')
 let myMovies = [];
 const moviesFromLocalStorage = JSON.parse(localStorage.getItem('myMovies'));
 
 
+// event listener for add buttons which adds movies to local storage //
+
+document.addEventListener('click', e => {
+    if(moviesFromLocalStorage) {
+        myMovies = moviesFromLocalStorage;
+    }
+    if(e.target.dataset.add) {
+        if(myMovies.includes(e.target.dataset.add)) {
+            return;
+        } else {
+            myMovies.push(e.target.dataset.add);
+        }
+    }
+    localStorage.setItem('myMovies', JSON.stringify(myMovies));
+})
+
+
 // Event Listener for the form submission which fetches nd displays the search results //
 
 if(form) {
-    form.addEventListener('submit', async function(e){
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
         let titleString = searchInput.value;
-        const searchRes = await fetch(`http://www.omdbapi.com/?apikey=8fbb0769&=${titleString}&type=movie`);
+        const searchRes = await fetch(`http://www.omdbapi.com/?apikey=8fbb0769&s=${titleString}&type=movie`);
         const searchResults = await searchRes.json();
         if(searchResults.Error) {
             renderErrorMessage();
         } else {
-            const searchResultIds = await searchResults.Search.ma(movie => movie.imbdID);
+            const searchResultIds = await searchResults.Search.map(movie => movie.imdbID);
             const moviesData = await getMovieDataFromIds(searchResultIds);
             console.log(moviesData);
             renderMovieList(moviesData, searchResultEl, 'add', '+');
@@ -32,7 +49,7 @@ if(form) {
 async function getMovieDataFromIds(movieIds) {
     const idRes = await Promise.all(
         movieIds.map(id => {
-            return fetch(`http://www.omdbapi.com/?apikey=8fbb0769&=${id}&plot=short`)
+            return fetch(`http://www.omdbapi.com/?apikey=8fbb0769&i=${id}&plot=short`)
         })
     )
     const idResults = await Promise.all(
@@ -41,27 +58,13 @@ async function getMovieDataFromIds(movieIds) {
     return idResults;
 }
 
-// event listener for add buttons which adds movies to local storage //
 
-document.addEventListener('click', e => {
-    if(moviesFromLocalStorage) {
-        myMovies = moviesFromLocalStorage;
-    }
-    if(e.target.dataset.add) {
-        if(myMovies.includes(e.target.dataset.add)) {
-            return;
-        } else {
-            myMovies.push(e.target.dataset.add)
-        }
-    }
-    localStorage.setItem('myMovies', JSON.stringify(myMovies));
-})
 
 // Display movie list for either searchlist or watchlist //
 
 function renderMovieList(movies, container, dataset, btnText) {
     container.innerHTML = ''
-    movies.forEach( movie => {
+    movies.forEach(movie => {
         container.innerHTML += `
         <div class="movie flex">
             <img class="poster" src="${movie.Poster}"/>

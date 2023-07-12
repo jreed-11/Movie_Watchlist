@@ -1,4 +1,4 @@
-import { moviesFromLocalStorage, renderMovieList, getMovieDataFromIds } from ".index.js";
+import { moviesFromLocalStorage, renderMovieList, getMovieDataFromIds } from "./index.js";
 
 const watchlistEl = document.getElementById('watchlist');
 
