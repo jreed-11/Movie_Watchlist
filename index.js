@@ -28,7 +28,7 @@ if(form) {
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         let titleString = searchInput.value;
-        const searchRes = await fetch(`http://www.omdbapi.com/?apikey=8fbb0769&s=${titleString}&type=movie`);
+        const searchRes = await fetch(`https://www.omdbapi.com/?apikey=8fbb0769&s=${titleString}&type=movie`);
         const searchResults = await searchRes.json();
         if(searchResults.Error) {
             renderErrorMessage();
@@ -49,7 +49,7 @@ if(form) {
 async function getMovieDataFromIds(movieIds) {
     const idRes = await Promise.all(
         movieIds.map(id => {
-            return fetch(`http://www.omdbapi.com/?apikey=8fbb0769&i=${id}&plot=short`)
+            return fetch(`https://www.omdbapi.com/?apikey=8fbb0769&i=${id}&plot=short`)
         })
     )
     const idResults = await Promise.all(
