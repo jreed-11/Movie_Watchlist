@@ -63,7 +63,7 @@ async function getMovieDataFromIds(movieIds) {
 // Display movie list for either searchlist or watchlist //
 
 function renderMovieList(movies, container, dataset, btnText) {
-    container.innerHTML = ''
+    container.innerHTML = '';
     movies.forEach(movie => {
         container.innerHTML += `
         <div class="movie flex">
