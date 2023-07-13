@@ -6,11 +6,11 @@ const watchlistEl = document.getElementById('watchlist');
 
 document.addEventListener('click', e => {
     const myMovies = moviesFromLocalStorage;
-    if(e.target.data.remove){
-        myMovies.splice(myMovies.indexOf(e.target,dataset.remove), 1);
+    if(e.target.dataset.remove){
+        myMovies.splice(myMovies.indexOf(e.target.dataset.remove), 1);
     }
 
-    localStorage.setItem('movies', JSON.stringify(myMovies));
+    localStorage.setItem('myMovies', JSON.stringify(myMovies));
     renderWatchList();
 })
 
