@@ -96,7 +96,7 @@ function renderMovieList(movies, container, dataset, btnText) {
 
 function renderErrorMessage() {
     searchResultEl.innerHTML = `
-        <div class="empty-listmsg flex">
+        <div class="empty-list-msg flex">
             <p>Unable to find the movie you are looking for. Please search again.</p>        
         </div>
     `
