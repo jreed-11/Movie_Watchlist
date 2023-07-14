@@ -113,18 +113,17 @@ min-height: calc(70vh - 60px)
 .empty-list-msg p {
   color: #2E2E2F;
   font-size: 2.5rem;
+  margin: 20px, 0px;
 }
 
 .empty-list-msg a {
-  color: #fff;
+  color: inherit;
   text-decoration: none;
 }
 
 .empty-list-msg span {
   background-color: #fff;
   border-radius: 50%;
-  color: #2E2E2F;
-  ;
   display: inline-block;
   font-weight: 700;
   height: 25px;
