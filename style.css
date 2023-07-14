@@ -123,7 +123,8 @@ min-height: calc(70vh - 60px)
 .empty-list-msg span {
   background-color: #fff;
   border-radius: 50%;
-  color: red;
+  color: #2E2E2F;
+  ;
   display: inline-block;
   font-weight: 700;
   height: 25px;

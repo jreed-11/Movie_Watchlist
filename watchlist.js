@@ -25,7 +25,8 @@ async function renderWatchList() {
             <div class="empty-list-msg flex">
                 <p> Your Watclist is looking a little empty....<p>
                     <a href="index.html">
-                    <span>+<span> Let's add some movies!</a>
+                    <span>+<span>
+                     "&nbsp;&nbsp;Let's add some movies!"</a>
             </div>
 
         `
